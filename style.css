@@ -1,0 +1,76 @@
+.topic{
+	background-color:#404E3B;
+	padding:20px;
+	margin:;
+	margin-top:-20px;
+	margin-right:-20px;
+	margin-left:-20px;
+	color: #E5EDF0;
+}
+body{
+	background-image: url("images/backgroundimage.jpg");
+	font-family:Times New Roman;
+}
+h1{
+	text-align: center;
+}
+.Register {
+    width: 350px;
+    margin: 60px auto;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.Register input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+.Register h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color:#404E3B;
+}
+
+button{
+	background-color:#404E3B;
+	color:white;
+	padding:8px;
+	border-radius: 8px;
+}
+.navbar {
+  background-color:#BAC8B1;
+  padding: 15px 30px;
+  margin:-10px;
+}
+
+
+.nav-links a {
+  color: #404E3B;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 14px;
+  transition: 0.3s ease;
+}
+.nav-links a:hover {
+  background-color:#404E3B ;
+  color:white;
+  border-radius: 4px;
+}
+button:hover{
+	background-color:#ffffff;
+	color:#404E3B;
+}
+.text{
+	 width: 350px;
+	 text-align:center;
+    margin: 60px auto;
+    padding: 30px 25px;
+    background-color: #E6E6E6;
+    border-radius: 10px;
