@@ -71,6 +71,7 @@ if (isset($_POST['update'])) {
 
     <br>
     <a href="displaymenu.php"> Back to Menu</a>
+    
 </div>
 </body>
 </html>

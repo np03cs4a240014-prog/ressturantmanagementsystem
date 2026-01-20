@@ -7,10 +7,11 @@
 	margin-left:-20px;
 	color: #E5EDF0;
 }
-body{
-	background-image: url("images/backgroundimage.jpg");
-	font-family:Times New Roman;
+body {
+  background-image: url("../images/backgroundimage.jpg");
+  font-family: "Times New Roman", Times, serif;
 }
+
 header{
 	text-align: center;
   background-color:#404E3B;
