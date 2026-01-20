@@ -1,7 +1,27 @@
 <?php
+require 'db.php';
+session_start();
 
-include 'db.php';
+if (isset($_POST['login'])) {
+
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE name = ?");
+    $stmt->execute([$name]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['name'];
+        header("Location: userdashboard.php");
+        exit;
+    } else {
+        $error = "Invalid login credentials";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +40,7 @@ include 'db.php';
 			<input type="text" name="name" placeholder="Enter your name" required><br>
 			
 			<input type="password" name="password" placeholder="Enter your password" required><br><br>
-			<button type="submit" name="LogIn">Log In</button>
+			<button type="submit" name="login">Log In</button>
 		</form>
 </div>
 <!-- <script>

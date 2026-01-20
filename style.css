@@ -11,9 +11,18 @@ body{
 	background-image: url("images/backgroundimage.jpg");
 	font-family:Times New Roman;
 }
-h1{
+header{
 	text-align: center;
+  background-color:#404E3B;
+  color:#E5EDF0;
 }
+
+h1{
+    text-align: center;
+  background-color:#404E3B;
+  color:#E5EDF0;
+}
+
 .Register {
     width: 350px;
     margin: 60px auto;
@@ -44,10 +53,28 @@ button{
 	padding:8px;
 	border-radius: 8px;
 }
+button:hover{
+  background-color:#ffffff;
+  color:#404E3B;
+}
 .navbar {
   background-color:#BAC8B1;
   padding: 15px 30px;
   margin:-10px;
+}
+.displaymenu {
+    display:inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #404E3B;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.displaymenu:hover {
+    background-color: #2f3a2b;
 }
 
 
@@ -63,10 +90,7 @@ button{
   color:white;
   border-radius: 4px;
 }
-button:hover{
-	background-color:#ffffff;
-	color:#404E3B;
-}
+
 .text{
 	 width: 350px;
 	 text-align:center;
@@ -74,3 +98,4 @@ button:hover{
     padding: 30px 25px;
     background-color: #E6E6E6;
     border-radius: 10px;
+}

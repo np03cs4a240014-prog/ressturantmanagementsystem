@@ -9,14 +9,15 @@
 </head>
 
 <body>
-
+<main>
 <div class="topic">
-  <h1>Restaurant Management System</h1>
+  <header>Restaurant Management System</hearder>
 </div>
 
 <nav class="navbar">
   <ul class="nav-links">
     <a href="usersignuppage.php">Sign Up As User</a>
+    <a href="registerresturantstaff.php">Sign Up As Staff</a>
     <a href="logincustomer.php">Log In as a user </a>
     <a href="loginresturant.php">Log In As a staff</a>
   </ul>
@@ -25,5 +26,8 @@
 <p><h2>Order what you crave for with
 <br><br> resturant management system<h2></p>
 </div>
+</main>
 </body>
+<footer>2026 Resturant management system</footer>
+
 </html>
