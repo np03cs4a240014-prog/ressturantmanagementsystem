@@ -73,6 +73,17 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
         th { background:#404E3B; 
             color:white; 
         }
+        footer{
+              background-color:#404E3B;
+              color:#E6E6E6;
+              padding:20px;
+              margin-top:120px;
+              margin-right:-20px;
+              margin-left:-20px;
+              text-align: center;
+              position:fixed;
+              width:100%;
+}
     
     </style>
 </head>
@@ -80,13 +91,16 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
 
 <h1>Resturant Dashboard</h1>
 <a href="addfoodstaff.php">Add New Menu Item</a>
+<a href="logoutstaff.php">Logout as a Staff</a>
 <div class="highlight">
 <h2>Lets make the customers happy <br> with Good Food</h2>
 </div>
-<a href="logoutstaff.php">Logout as a Staff</a>
 
 
 
 
+<footer>
+    &copy; 2026 Restaurant Management System
+</footer>
 </body>
 </html>

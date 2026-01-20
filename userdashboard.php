@@ -69,4 +69,7 @@ $user = $stmt->fetch();
 </div>
 
 </body>
+<footer>
+    &copy; 2026 Restaurant Management System
+</footer>
 </html>

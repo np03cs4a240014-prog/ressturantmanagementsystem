@@ -45,11 +45,11 @@ if (isset($_POST['add_menu'])) {
     <input type="number" step="0.01" name="price" placeholder="Price" required><br>
 
     <button type="submit" name="add_menu">Add Food</button>
+    <a href="displaymenu.php" class="displaymenu">Display Food Items</a>
 </form>
 
-<a href="displaymenu.php" class="displaymenu">Display Food Items</a>
+
 
 </div>
 
-<a href="logout.php">Logout</a>
 

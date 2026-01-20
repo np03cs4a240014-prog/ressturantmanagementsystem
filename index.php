@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Restaurant Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 <main>
 <div class="topic">
-  <header>Restaurant Management System</hearder>
+  <header><h2>Restaurant Management System</h2></hearder>
 </div>
 
 <nav class="navbar">
@@ -28,6 +28,7 @@
 </div>
 </main>
 </body>
-<footer>2026 Resturant management system</footer>
-
+<footer>
+    &copy; 2026 Restaurant Management System
+</footer>
 </html>

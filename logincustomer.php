@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
 <body>
 <div class="topic">
 	<h2>Resutrant Management System</h2>
@@ -43,20 +43,10 @@ if (isset($_POST['login'])) {
 			<button type="submit" name="login">Log In</button>
 		</form>
 </div>
-<!-- <script>
-function checkPassword() {
-  let password = document.getElementById("password").value;
-  let confirmPassword = document.getElementById("confirm_password").value;
-  let error = document.getElementById("error");
 
-  if (password !== confirmPassword) {
-    error.innerHTML = "Passwords do not match!";
-    return false; // stop form submission
-  }
 
-  error.innerHTML = "";
-  return true;
-}
-</script> -->
 </body>
+<footer>
+    &copy; 2026 Restaurant Management System
+</footer>
 </html>

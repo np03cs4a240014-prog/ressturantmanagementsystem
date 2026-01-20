@@ -35,7 +35,7 @@ if (isset($_POST['LogIn'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <style>.error { color:red; margin-bottom:10px; }</style>
 </head>
 <body>
@@ -44,7 +44,7 @@ if (isset($_POST['LogIn'])) {
 </div>
 
 <div class="Register">
-    <h2>Log In</h2>
+    <h2><center>Log In</h2>
 
     <?php if($error): ?>
         <p class="error"><?= $error ?></p>
@@ -53,8 +53,12 @@ if (isset($_POST['LogIn'])) {
     <form method="POST" action="">
         <input type="text" name="name" placeholder="Enter your account name" required><br>
         <input type="password" name="password" placeholder="Enter your account password" required><br><br>
-        <button type="submit" name="LogIn">Log In</button>
+        <button type="submit" name="LogIn">Log In as a staff</button>
     </form>
 </div>
+
 </body>
+<footer>
+    &copy; 2026 Restaurant Management System
+</footer>
 </html>

@@ -47,13 +47,36 @@ try {
             background-color:#404E3B;
             color:#E5EDF0;
         }
-        a {
-            text-decoration: none;
-            color: blue;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+    .logout-btn {
+    display: inline-block;          /* Makes it behave like a butto*/
+    padding: 10px 25px;             /* Nice spacing */
+    background-color:#404E3B ;      /* Red color */
+    color: white;                    /* White text */
+    text-decoration: none;           /* Remove underline */
+    border-radius: 5px;              /* Rounded corners */
+    font-weight: bold;               /* Bold text */
+    transition: background 0.3s;     /* Smooth hover effect */
+}
+
+.logout-btn:hover {
+    background-color:#909d88;  
+    color: #404E3B ;
+    cursor: pointer;
+}
+
+a{
+    padding:6px;
+    background-color:#909d88;
+    color:#404E3B;
+
+}
+a:hover{
+    padding:6px;
+    background-color: white;
+    color:#404E3B;
+}
+
+        
         .message {
             text-align: center;
             margin-top: 20px;
@@ -64,7 +87,8 @@ try {
 <body>
 
 <h2>Menu List</h2>
-
+<main>
+<a href="logoutstaff.php" class="logout-btn">Logout as a Staff</a>
 <?php if (!empty($menuItems)): ?>
     <table>
         <tr>
@@ -88,7 +112,6 @@ try {
 <?php else: ?>
     <p class="message">No menu items found. Please add some food first.</p>
 <?php endif; ?>
-<a href="logoutstaff.php">Logout as a staff</a>
-
+</main>
 </body>
 </html>
