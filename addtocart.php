@@ -7,15 +7,11 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if (!isset($_GET['csrf_token']) || $_GET['csrf_token'] !== $_SESSION['csrf_token']) {
+if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     die("CSRF validation failed");
 }
 
-$item_id = (int)$_GET['item_id'];
-
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = [];
-}
+$item_id = (int)$_POST['item_id'];
 
 $_SESSION['cart'][$item_id] = ($_SESSION['cart'][$item_id] ?? 0) + 1;
 
