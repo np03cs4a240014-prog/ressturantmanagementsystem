@@ -10,7 +10,7 @@
 body {
   background-image: url("../images/backgroundimage.jpg");
   font-family: "Times New Roman", Times, serif;
-   background-size: cover;      /* 👈 key property */
+   background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
