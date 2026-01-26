@@ -1,5 +1,6 @@
 <?php
-include 'db.php';
+include __DIR__ . '/../config/db.php';
+
 session_start();
 
 // Only staff/admin can add menu items
@@ -27,7 +28,7 @@ if (isset($_POST['add_menu'])) {
     }
 }
 ?>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../assets/style.css">
 <div class="topic">
 <header><h1> Add food to today's menu</h1></header></div>
 </div>
@@ -51,5 +52,8 @@ if (isset($_POST['add_menu'])) {
 
 
 </div>
+?>
+
+
 
 

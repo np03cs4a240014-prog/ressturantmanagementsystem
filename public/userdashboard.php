@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+include __DIR__ . '/../config/db.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -17,7 +17,7 @@ $user = $stmt->fetch();
 <title>User Dashboard</title>
 <style>
 body{
-    background-image: url("images/stafffoodimage.jpg");
+    background-image: url("../images/backgroundimage.jpg");
     color:#E5EDF0;
     font-family:Times New Roman;
     background-size: cover;      /* 👈 key property */

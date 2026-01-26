@@ -1,6 +1,5 @@
 <?php
-// Include database connection
-require 'db.php';
+include __DIR__ . '/../config/db.php';
 
 // Check if 'id' is provided in the URL
 if (isset($_GET['id'])) {

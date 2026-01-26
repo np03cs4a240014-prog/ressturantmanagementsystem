@@ -1,5 +1,6 @@
 <?php
-include 'db.php';
+include __DIR__ . '/../config/db.php';
+session_start();
 
 if (isset($_POST['signup'])) {
 
@@ -14,11 +15,10 @@ if (isset($_POST['signup'])) {
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $pdo->prepare(
-            "INSERT INTO users (name, password, phone) VALUES (?, ?, ?)"
-        );
-        $stmt->execute([$name, $hashed_password, $phone]);
-
+     $stmt = $pdo->prepare(
+    "INSERT INTO users (name, password, phone, role) VALUES (?, ?, ?, 'Customer')"
+);
+$stmt->execute([$name, $hashed_password, $phone]);
         header("Location: logincustomer.php");
         exit;
     }
@@ -33,7 +33,7 @@ if (isset($_POST['signup'])) {
 	<title></title>
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/style.css">
 <body>
 	<div class="topic">
 	<h2><center>Resutrant Management System</center></h2>

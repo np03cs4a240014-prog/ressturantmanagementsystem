@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/../config/db.php';
 session_start(); // Start the session
 
 // Unset all session variables

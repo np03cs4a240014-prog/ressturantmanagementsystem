@@ -1,5 +1,6 @@
 <?php
-require 'db.php';
+include __DIR__ . '/../config/db.php';
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) exit;
@@ -17,3 +18,4 @@ if ($q) {
 
 header('Content-Type: application/json');
 echo json_encode($stmt->fetchAll());
+?>

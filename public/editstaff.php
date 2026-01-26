@@ -1,5 +1,6 @@
 <?php
-include 'db.php';
+include __DIR__ . '/../config/db.php';
+
 session_start();
 
 // Only staff/admin can edit menu
@@ -49,7 +50,7 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="utf-8">
     <title>Edit Menu Item - Staff</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <style>.error { color:red; }</style>
 </head>
 <body>

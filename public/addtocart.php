@@ -1,6 +1,7 @@
 <?php
+include __DIR__ . '/../config/db.php';
 session_start();
-require 'db.php';
+
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: logincustomer.php");

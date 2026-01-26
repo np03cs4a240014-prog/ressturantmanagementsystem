@@ -1,5 +1,4 @@
-<?php
-require 'db.php';
+<?php include __DIR__ . '/../config/db.php';
 session_start();
 
 if (isset($_POST['login'])) {
@@ -29,7 +28,7 @@ if (isset($_POST['login'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/style.css">
 <body>
 <div class="topic">
 	<h2>Resutrant Management System</h2>

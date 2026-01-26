@@ -1,6 +1,6 @@
+<?php
+include __DIR__ . '/../config/db.php';
 
-<?php 
-include'db.php'?>
 /* Fetch menu items from database */
 $menuStmt = $pdo->query("SELECT * FROM menu ORDER BY name");
 $menuItems = $menuStmt->fetchAll();

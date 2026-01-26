@@ -1,11 +1,12 @@
-<?php include 'db.php'?>
+<?php
+include __DIR__ . '/../config/db.php';?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Restaurant Management System</title>
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>

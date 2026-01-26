@@ -1,6 +1,8 @@
+
 <?php
+include __DIR__ . '/../config/db.php';
 session_start();
-require 'db.php';
+
 
 if (!isset($_SESSION['user_id'])) die("Login required");
 
@@ -13,4 +15,4 @@ $pdo->prepare("UPDATE cart SET quantity=? WHERE id=?")->execute([$quantity, $car
 
 $_SESSION['message'] = "Cart updated successfully!";
 header("Location: cartview.php");
-exit;
+exit;?>

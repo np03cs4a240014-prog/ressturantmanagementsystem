@@ -1,6 +1,7 @@
 <?php
+include __DIR__ . '/../config/db.php';
 session_start();
-require 'db.php';
+
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: logincustomer.php");
@@ -54,18 +55,23 @@ foreach ($cartItems as $item) {
             color:#E5EDF0;
             text-align:center;
         }
-        table {
-         width:80%;
-        margin:20px auto;
-         border-collapse:collapse;
-     }
+      table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background-color:#404E3B;
+        color:#ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+}
         th, td { 
             padding:10px;
             border:1px solid #fff;
             }
 
         th { 
-            background:#444;
+            background:#404E3B;
+            color:#E5EDF0;
             }
         a, button { 
             padding:6px 12px;
@@ -74,8 +80,8 @@ foreach ($cartItems as $item) {
              cursor:pointer;
          }
         a{
-         background:#2f3b2a; 
-         color:white;
+         background:#404E3B; 
+         color:#E5EDF0;
           text-decoration:none;
            margin:5px; 
        }
@@ -90,11 +96,30 @@ foreach ($cartItems as $item) {
         .btn:hover { 
             opacity:0.8;
              }
+             .alert {
+    width: 80%;
+    margin: 15px auto;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #2ecc71;
+    color: white;
+}
     </style>
 </head>
 <body>
 
 <h1>Your Cart</h1>
+<?php if (!empty($_SESSION['message'])): ?>
+    <div class="alert success">
+        <?= htmlspecialchars($_SESSION['message']) ?>
+    </div>
+    <?php unset($_SESSION['message']); ?>
+<?php endif; ?>
 
 <?php if (empty($cartItems)): ?>
     <p>Your cart is empty.</p>
@@ -123,11 +148,12 @@ foreach ($cartItems as $item) {
             <td><?= number_format($item['price'],2) ?></td>
             <td><?= number_format($item['price'] * $item['quantity'],2) ?></td>
             <td>
-                <form method="POST" action="deletefood.php" style="display:inline;">
-                    <input type="hidden" name="cart_id" value="<?= $item['cart_id'] ?>">
-                    <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
-                    <button type="submit" class="btn" style="background:red;">Delete</button>
-                </form>
+                <form method="POST" action="deletefood.php" style="display:inline;"
+      onsubmit="return confirm('Are you sure you want to remove this item from your cart?');">
+    <input type="hidden" name="cart_id" value="<?= $item['cart_id'] ?>">
+    <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
+    <button type="submit" class="btn" style="background:red;">Delete</button>
+</form>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -139,7 +165,7 @@ foreach ($cartItems as $item) {
     </table>
 
     <a href="menu.php">Back to Menu</a>
-    <a href="place_order.php" class="btn">Place Order</a>
+    <a href="place_order.php">Place Order</a>
 
 <?php endif; ?>
 

@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+include __DIR__ . '/../config/db.php';
 
 // Initialize menu items
 $menuItems = [];
@@ -18,9 +18,9 @@ try {
     <meta charset="UTF-8">
     <title>Menu List</title>
     <style>
-        body{
-            background-color:#E5EDF0 ;
-        }
+           body{
+    background-image:url("../images/backgroundimage.jpg");
+}
         h2{
             padding:30px;
             background-color: #404E3B;

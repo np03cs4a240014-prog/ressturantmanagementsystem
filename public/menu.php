@@ -1,6 +1,6 @@
 <?php
+include __DIR__ . '/../config/db.php';
 session_start();
-require 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: logincustomer.php");
@@ -26,7 +26,7 @@ $cartCount = $row['cartCount'] ?? 0;
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body{
-            background-image:url("images/backgroundimage.jpg");
+            background-image:url("../images/backgroundimage.jpg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
