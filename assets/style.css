@@ -13,6 +13,7 @@ body {
    background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    max-height: 100%;
 }
 
 header{
@@ -111,7 +112,7 @@ button:hover{
 footer{
   background-color:#404E3B;
   color:#E6E6E6;
-  padding:20px;
+  padding:10px;
   margin-top:170px;
   margin-right:-20px;
   margin-left:-20px;

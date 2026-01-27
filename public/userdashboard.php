@@ -76,7 +76,7 @@ h1{
 <div class="goto">
     <a href="menu.php"> View Menu</a>
     <a href="cartview.php">View Cart</a>
-    <a href="logout.php"> Logout</a>
+    <a href="logoutcustomer.php"> Logout</a>
 </div>  
 <div class="box">
 

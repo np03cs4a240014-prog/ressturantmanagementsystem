@@ -29,7 +29,10 @@ include __DIR__ . '/../config/db.php';?>
 </div>
 </main>
 </body>
-<footer>
+<!-- <footer>
     &copy; 2026 Restaurant Management System
-</footer>
+</footer> -->
+
 </html>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -89,7 +89,7 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
 <h1>Restaurant Dashboard - Staff</h1>
 <a href="addfoodstaff.php">Add New Menu Item</a>
 <a href="logoutstaff.php">Logout</a>
-<a href="vieworders.php">View customers order</a>
+<a href="vieworder.php">View Orders From Customers</a>
 <h2>Let's make the customers happy <br> with Good Food</h2>
 
 <!-- Example Table of Menu Items -->

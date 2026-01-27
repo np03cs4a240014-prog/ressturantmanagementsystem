@@ -84,14 +84,15 @@ try {
             background-position: center;
             background-attachment: fixed;
             margin: 0;
-            padding: 20px;
+            padding:20px;
         }
 
         h1 {
-            padding:50px;
-            margin-top:-10px;
-            margin-right:-10px;
-            margin-left:-10px;
+            padding:30px;
+            margin-top:-20px;
+            margin-right:-20px;
+            margin-left:-20px;
+            margin-bottom: 20px;
             background-color:#404E3B;
             text-align:center;
             color:#E5EDF0;
