@@ -1,16 +1,17 @@
 <?php
 include __DIR__ . '/../config/db.php';
-
 session_start();
 
-// Only staff/admin can add menu items
-if (!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'staff')) {
-    header("Location: loginresturant.php");
-    exit;
+
+// Only Staff/Admin can access
+if (!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'Staff')) {
+header("Location: loginstaff.php"); // redirect staff to login page
+exit;
 }
 
+
 $error = "";
-$success = ""; // new variable for success message
+$success = "";// new variable for success message
 
 // Handle form submission
 if (isset($_POST['add_menu'])) {

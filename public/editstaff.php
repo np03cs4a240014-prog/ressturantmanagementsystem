@@ -1,20 +1,20 @@
 <?php
 include __DIR__ . '/../config/db.php';
-
 session_start();
 
-// Only staff/admin can edit menu
-if (!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'staff')) {
-    header("Location: loginresturant.php");
-    exit;
+
+// Only Staff/Admin can edit
+if (!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'Staff')) {
+header("Location: loginstaff.php"); // redirect if not authorized
+exit;
 }
+
 
 // Get menu item ID from query string
 if (!isset($_GET['id'])) {
-    header("Location: resturantdashboard.php");
-    exit;
+header("Location: displaymenu.php");
+exit;
 }
-
 $id = $_GET['id'];
 $error = "";
 

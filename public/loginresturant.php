@@ -37,25 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Login - Restaurant Management</title>
-    <link rel="stylesheet" href="../assets/style.css">
-    <style>
-        .error { color: red; margin-bottom: 10px; }
-        input { padding: 10px; margin-bottom: 10px; width: 100%; }
-        input[type=submit] { cursor: pointer; background-color:#404E3B; color:white; border:none; }
-    </style>
+    <title>Staff Login-Restaurant Management</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
 </head>
-<body>
-    <h1>Staff Login</h1>
-
+<body><div class="topic">
+    <h2>Staff Login</h2>
+</div>
     <?php if($error): ?>
         <p class="error"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
-
+<div class="Register">
+    <h2>Log In</h2>
     <form method="POST" action="">
         <input type="text" name="name" placeholder="Enter your account name" autocomplete="username" required>
         <input type="password" name="password" placeholder="Enter your account password" autocomplete="current-password" required>
-        <input type="submit" name="LogIn" value="Log In as Staff">
+        <button type="submit" name="login" value ="Log In as a Staff">Log In</button>
     </form>
+</div>
 </body>
 </html>

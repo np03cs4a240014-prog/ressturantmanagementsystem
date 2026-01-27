@@ -4,7 +4,7 @@ session_start();
 
 // Staff access only
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Staff') {
-    header("Location: loginstaff.php");
+    header("Location: addfoodstaff.php");
     exit;
 }
 
@@ -21,7 +21,10 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
     <style>
         body {
             background-image: url("../images/stafffoodimage.jpg");
-            font-family: Arial, sans-serif;
+            font-family:Times New Roman;
+             background-size: cover;
+             background-position: center;
+            background-attachment: fixed;
         }
         h1{
             padding:25px;
@@ -42,8 +45,15 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
             background-color:#404E3B;
             color:white;
         }
+        h1{
+            margin-top:-10px;
+            margin-right:-10px;
+            margin-left:-10px;
+        }
         h2{
-            margin-top: 50px;
+            margin-top: 150px;
+            max-width:500px;
+            margin-left:500px;
             padding:30px;
             background-color: white;
             border-radius: 20px;
@@ -79,24 +89,11 @@ $menuItems = $pdo->query("SELECT * FROM menu ORDER BY name")->fetchAll();
 <h1>Restaurant Dashboard - Staff</h1>
 <a href="addfoodstaff.php">Add New Menu Item</a>
 <a href="logoutstaff.php">Logout</a>
-
+<a href="vieworders.php">View customers order</a>
 <h2>Let's make the customers happy <br> with Good Food</h2>
 
 <!-- Example Table of Menu Items -->
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-    </tr>
-    <?php foreach($menuItems as $item): ?>
-    <tr>
-        <td><?= htmlspecialchars($item['id']) ?></td>
-        <td><?= htmlspecialchars($item['name']) ?></td>
-        <td><?= htmlspecialchars($item['price']) ?></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
+
 
 <footer>
     &copy; 2026 Restaurant Management System

@@ -22,7 +22,7 @@ header{
 }
 
 h1{
-    text-align: center;
+  text-align: center;
   background-color:#404E3B;
   color:#E5EDF0;
 }
@@ -47,7 +47,7 @@ h1{
     transition: 0.3s;
 }
 .Register h2 {
-    text-align: center;
+    text-align:center;
     margin-bottom: 25px;
     color:#404E3B;
 }
