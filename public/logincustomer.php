@@ -4,19 +4,41 @@ session_start();
 
 $error = "";
 
+/* ---------- CSRF TOKEN GENERATION ---------- */
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 if (isset($_POST['login'])) {
+
+    /* ---------- CSRF VALIDATION ---------- */
+    if (
+        !isset($_POST['csrf_token']) ||
+        !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
+    ) {
+        die("Invalid CSRF token");
+    }
 
     $name = trim($_POST['name']);
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE name = ? AND LOWER(role) = 'customer'");
+    $stmt = $pdo->prepare(
+        "SELECT * FROM users WHERE name = ? AND LOWER(role) = 'customer'"
+    );
     $stmt->execute([$name]);
-    $user = $stmt->fetch();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
+
         $_SESSION['user_id']   = $user['id'];
         $_SESSION['user_name'] = $user['name'];
-        $_SESSION['role']      = $user['role']; // 
+        $_SESSION['role']      = $user['role'];
+
+        // Prevent session fixation
+        session_regenerate_id(true);
+
+        // Optional: regenerate CSRF token after login
+        unset($_SESSION['csrf_token']);
 
         header("Location: userdashboard.php");
         exit;
@@ -47,6 +69,10 @@ if (isset($_POST['login'])) {
     <?php endif; ?>
 
     <form method="POST">
+        <!-- CSRF Token -->
+        <input type="hidden" name="csrf_token"
+               value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+
         <input type="text" name="name" placeholder="Enter your name" required>
         <input type="password" name="password" placeholder="Enter your password" required>
         <button type="submit" name="login">Log In</button>
